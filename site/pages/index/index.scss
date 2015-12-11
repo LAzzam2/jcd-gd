@@ -69,13 +69,20 @@
 		background: url(images/splashsketch.jpg)no-repeat center center;
 		background-size: cover;
 	}
-	.bottomTrigger {
+	#bottomTrigger1 {
 		position: absolute;
 		bottom: 0px;
-		left: 50%;
-		transform: translate(-50%,0%);
+		left: 10%;
 		height: 100%;
-		width: 80%;
+		width: 20%;
+		z-index: 4;
+	}
+	#bottomTrigger2 {
+		position: absolute;
+		bottom: 0px;
+		left: 30%;
+		height: 100%;
+		width: 20%;
 		z-index: 4;
 	}
 	.hero {
@@ -96,8 +103,7 @@
 		top: 50%; left: 50%;
 		transform: translate(0%,-50%);
 		transition: all 250ms ease-out;
-		min-width: 25%;
-		max-width: 500px;
+		width: 40%;
 		background-color: rgba(0,0,0,.4);
 		padding: 25px;
 		z-index: 5;
@@ -129,6 +135,7 @@
 			cursor: hand; cursor: pointer;
 			transition: all 250ms ease-out;
 			border: 2px solid rgba(255,255,255,.5);
+			z-index: 15;
 			img {
 				width: 25px;
 				float: right;
@@ -144,6 +151,22 @@
 			img {
 				opacity: 1;
 			}
+		}
+		#bottomTrigger3 {
+			position: absolute;
+			top: -50%;
+			left: 0%;
+			height: 200%;
+			width: 50%;
+			z-index: 4;
+		}
+		#bottomTrigger4 {
+			position: absolute;
+			top: -50%;
+			left: 50%;
+			height: 200%;
+			width: 50%;
+			z-index: 4;
 		}
 	}
 }
@@ -163,6 +186,7 @@ $margin: 400px;
   color: white;
 }
 .totes {
+	background: transparent;
 	position: absolute;
 	z-index: 5;
 	bottom: 0px;
@@ -245,6 +269,13 @@ $margin: 400px;
 		}
 		h3, p, .tote-learn-more {
 			opacity: 1;
+		}
+	}
+	>div.hover2 {
+		opacity: 1;
+		transform: translate(0,-20px);
+		.tote-learn-more {
+			transition: all 250ms ease-out;
 		}
 	}
 }

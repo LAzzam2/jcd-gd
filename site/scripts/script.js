@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 
     var totes = $('.tote');
-    console.log(totes);
     $.each( totes, function( key, value ) {
       var number = 1 + Math.floor(Math.random() * 6);  
         $(value).css({
@@ -56,20 +55,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         closeTotes();
     });
 
-    $('.bottomTrigger').hover(function(){
-        $('.totes').addClass('hover2');
-        // $('.main').css({
-        //     opacity: '.8',
-        //     '-webkit-transform': 'scale(.95) translate(0%,-50%)',
-        // });
-    },function(){
-        $('.totes').removeClass('hover2');
-        // $('.main').css({
-        //     opacity: '1',
-        //     '-webkit-transform': 'scale(1) translate(0%,-50%)',
-        // });
-    });
-
     function openTote(){
         $('.hero').addClass('totes-active');
         $('.hero').removeClass('totes-inactive');
@@ -83,6 +68,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
             totes.removeClass('animating');
             $('.hero').addClass('totes-inactive');
         });
+    }
+
+    bottomTriggers();
+
+    function bottomTriggers(){
+        $('.bottomTrigger').hover(function(){
+            var trigger = $(this).attr('id').replace('bottomTrigger','');
+            $($('.tote')[trigger-1]).addClass('hover2');
+        },function(){
+            var trigger = $(this).attr('id').replace('bottomTrigger','');
+            $($('.tote')[trigger-1]).removeClass('hover2');
+        });
+        
     }
 
 });
