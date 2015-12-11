@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     $('.bottomTrigger').hover(function(){
-        $('.totes').addClass('breath');
+        $('.totes').addClass('hover2');
         // $('.main').css({
         //     opacity: '.8',
         //     '-webkit-transform': 'scale(.95) translate(0%,-50%)',
         // });
     },function(){
-        $('.totes').removeClass('breath');
+        $('.totes').removeClass('hover2');
         // $('.main').css({
         //     opacity: '1',
         //     '-webkit-transform': 'scale(1) translate(0%,-50%)',

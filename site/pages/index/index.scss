@@ -162,9 +162,6 @@ $margin: 400px;
   content: '×'; /* UTF-8 symbol */
   color: white;
 }
-.totes.breath {
-	transform: translate(-50%,calc((100% - 60px)));
-}
 .totes {
 	position: absolute;
 	z-index: 5;
@@ -258,6 +255,12 @@ $margin: 400px;
 		h3 {
 			opacity: 1;
 		}
+	}
+}
+.totes.hover2 {
+	transform: translate(-50%,calc((100% - 60px)));
+	>div {
+		opacity: 1;
 	}
 }
 .totes-active {
