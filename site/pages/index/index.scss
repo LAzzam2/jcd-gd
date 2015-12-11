@@ -71,10 +71,10 @@
 	}
 	.bottomTrigger {
 		position: absolute;
-		bottom: 50px;
+		bottom: 0px;
 		left: 50%;
-		transform: translate(-50%,calc((100% - 40px)));
-		height: 500px;
+		transform: translate(-50%,0%);
+		height: 100%;
 		width: 80%;
 		z-index: 4;
 	}
@@ -95,7 +95,7 @@
 		position: absolute;
 		top: 50%; left: 50%;
 		transform: translate(0%,-50%);
-		transition: all 550ms ease-out;
+		transition: all 250ms ease-out;
 		min-width: 25%;
 		max-width: 500px;
 		background-color: rgba(0,0,0,.4);
@@ -163,7 +163,7 @@ $margin: 400px;
   color: white;
 }
 .totes.breath {
-	transform: translate(-50%,calc((100% - 50px)));
+	transform: translate(-50%,calc((100% - 60px)));
 }
 .totes {
 	position: absolute;
@@ -171,7 +171,7 @@ $margin: 400px;
 	bottom: 0px;
 	left: 50%;
 	transform: translate(-50%,calc((100% - 40px)));
-	transition: all 550ms ease-out;
+	transition: all 250ms ease-out;
 	width: 80%; height: 100%;
 	display: flex;
 	flex-flow: row;
@@ -199,7 +199,7 @@ $margin: 400px;
 		opacity: .9;
 		display: flex;
 		align-items: center;
-		padding-top: 80px;
+		padding-top: 15px;
 		p {
 			color: white; 
 			font-weight: 100;
@@ -209,7 +209,7 @@ $margin: 400px;
 		}
 		p, .tote-learn-more {
 			opacity: -100;
-			transition: all 1050ms ease-out;
+			transition: all 450ms ease-out;
 		}
 		h3 {
 			opacity: 0;
@@ -217,6 +217,7 @@ $margin: 400px;
 			align-self: flex-start;
 			color: white;
 			font-weight: bold;
+			margin-bottom: 55px;
 		}
 		.tote-learn-more {
 			border: 1px solid white;
@@ -251,8 +252,9 @@ $margin: 400px;
 	}
 }
 .totes.hover {
-	transform: translate(-50%,calc(100% - 50px));
+	transform: translate(-50%,calc((100% - 60px)));
 	>div {
+		opacity: 1;
 		h3 {
 			opacity: 1;
 		}
@@ -271,6 +273,9 @@ $margin: 400px;
 	}
 	.totes{
 		transform: translate(-50%,0px);
+		>div {
+			padding-top: 80px;
+		}
 		.tote {
 			opacity: 1;
 			margin-top: 0px;
@@ -279,6 +284,7 @@ $margin: 400px;
 			}
 			h3 {
 				opacity: 1;
+				margin-bottom: 15px;
 			}
 		}
 		.tote:hover {
@@ -287,7 +293,7 @@ $margin: 400px;
 	}
 	.main {
 		opacity: 0 !important;
-		transform: scale(.95) translate(0,-53%) !important;
+		transform: translate(0,-150%) !important;
 		pointer-events: none;
 	}
 }

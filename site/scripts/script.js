@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         closeTotes();
     });
 
-    $('.totes, .bottomTrigger').hover(function(){
+    $('.bottomTrigger').hover(function(){
         $('.totes').addClass('breath');
         // $('.main').css({
         //     opacity: '.8',
