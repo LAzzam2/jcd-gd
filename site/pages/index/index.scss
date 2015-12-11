@@ -68,7 +68,15 @@
 		height: 100%;
 		background: url(images/splashsketch.jpg)no-repeat center center;
 		background-size: cover;
-		cursor: hand; cursor: pointer;
+	}
+	.bottomTrigger {
+		position: absolute;
+		bottom: 50px;
+		left: 50%;
+		transform: translate(-50%,calc((100% - 40px)));
+		height: 500px;
+		width: 80%;
+		z-index: 4;
 	}
 	.hero {
 		position: relative;
@@ -111,50 +119,94 @@
 		}
 		.learn-more-btn {
 			background-color: $red;
-			display: inline-block;
-			padding: 15px 0px;
+			padding: 10px 0px;
 			margin-top: 15px;
 			color: white;
 			font-size: 12px;
 			font-weight: light;
-			margin-left: 50%;
-			transform: translate(-50%,0);
-			width: 80%;
-			text-align: center;
+			padding-left: 15px;
+			width: 50%;
+			text-align: left;
 			cursor: hand; cursor: pointer;
 			transition: all 250ms ease-out;
+			border: 2px solid rgba(255,255,255,.5);
+			img {
+				width: 25px;
+				float: right;
+				position: absolute;
+				top: 50%; right: 10px;
+				transform: translate(0px,-50%);
+				opacity: .5;
+			}
 		}
 		.learn-more-btn:hover {
 			box-shadow: 0px 0px 5px 2px rgba(0,0,0,.2);
+			border: 2px solid rgba(255,255,255,1);
+			img {
+				opacity: 1;
+			}
 		}
 	}
+}
+$margin: 400px;
+.dialog {
+	position: absolute;
+    top: 5px;
+    right: 10px;
+    opacity: 0;
+    pointer-events: none;
+    a {
+  		text-decoration: none;
+    }
+}
+.close-thin:after {
+  content: '×'; /* UTF-8 symbol */
+  color: white;
+}
+.totes.breath {
+	transform: translate(-50%,calc((100% - 50px)));
 }
 .totes {
 	position: absolute;
 	z-index: 5;
 	bottom: 0px;
 	left: 50%;
-	transform: translate(-50%,calc(100% - 20px));
+	transform: translate(-50%,calc((100% - 40px)));
 	transition: all 550ms ease-out;
-	width: 80%;
+	width: 80%; height: 100%;
 	display: flex;
 	flex-flow: row;
+	opacity: 1;
 	>div:nth-child(2n){
 		opacity: .7;
 	}
+	>div:nth-child(2){
+		margin-top: 15px;
+		background-color: rgba(89,10,6,.8);
+	}
+	>div:nth-child(3){
+		background-color: rgba(190, 62, 50, .8);
+	}
+	>div:nth-child(4){
+		margin-top: 15px;
+		background-color: rgba(148,46,36,.8);
+	}
 	>div {
-		width: 25%;
-		background-color: $red;
+		width: 25%; height: 100%;
+		background-color: rgba(147,51,42,.8);
 		transition: all 250ms ease-out;
 		padding: 15px;
 		cursor: hand; cursor: pointer;
 		opacity: .9;
+		display: flex;
+		align-items: center;
+		padding-top: 80px;
 		p {
 			color: white; 
 			font-weight: 100;
-			font-size: 12px;
+			font-size: 15px;
 			line-height: 1.3em;
-			margin-bottom: 15px;
+			margin-bottom: 25px;
 		}
 		p, .tote-learn-more {
 			opacity: -100;
@@ -163,15 +215,21 @@
 		h3 {
 			opacity: 0;
 			transition: all 150ms ease-out;
+			align-self: flex-start;
+			color: white;
+			font-weight: bold;
 		}
 		.tote-learn-more {
 			border: 1px solid white;
 			display: inline-block;
-			padding: 5px 10px;
+			padding: 10px 15px;
 			color: white;
-			font-size: 12px;
+			font-size: 14px;
 			font-weight: 100;
 			margin-bottom: 5px;
+			background-color: rgba(0,0,0,.4);
+			text-align: center;
+			width: 70%;
 		}
 		.tote-learn-more:hover{
 			color: $red;
@@ -184,7 +242,7 @@
 	}
 	>div:hover {
 		opacity: 1;
-		transform: translate(0,calc((100% - 20px)*-1));
+		transform: translate(0,-20px);
 		.tote-learn-more {
 			transition: all 250ms ease-out;
 		}
@@ -202,10 +260,21 @@
 	}
 }
 .totes-active {
+	transition: all 5550ms ease-out !important;
+	.bgImg {
+		cursor: hand; cursor: pointer;
+	}
+	.dialog {
+		opacity: 1;
+		pointer-events: inherit;
+		font-size: 30px;
+		font-weight: 100;
+	}
 	.totes{
 		transform: translate(-50%,0px);
 		.tote {
 			opacity: 1;
+			margin-top: 0px;
 			p, .tote-learn-more {
 				opacity: 1;
 			}

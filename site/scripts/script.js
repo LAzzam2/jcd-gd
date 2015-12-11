@@ -1,6 +1,26 @@
 'use strict';
 document.addEventListener("DOMContentLoaded", function(event) { 
 
+    var totes = $('.tote');
+    console.log(totes);
+    $.each( totes, function( key, value ) {
+      var number = 1 + Math.floor(Math.random() * 6);  
+        $(value).css({
+            'margin-top': -(number*15)+"px",
+            transition: '0s',
+            opacity: 0
+        })
+    });
+
+        setTimeout(function(){
+
+        totes.css({
+            'margin-top': '',
+            transition: '',
+            opacity: ''
+        })
+    },250)
+
 	$('.mobile').slick({
   		infinite: true,
         centerMode: false,
@@ -21,37 +41,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 
+    $(document).on('click','.totes-inactive>.totes>.tote',function(){
+        openTote();
+    });
     $('.learn-more-btn').on('click', function(){
-        $('.hero').addClass('totes-active');
+        openTote();
     });
 
     $(document).keyup(function(e){
         if(e.keyCode === 27)
         closeTotes();
     });
-    $('.bgImg').on('click', function(){
+    $('.bgImg, .dialog').on('click', function(){
         closeTotes();
     });
 
-    $('.totes').hover(function(){
-        $('.main').css({
-            opacity: '.1',
-            '-webkit-transform': 'scale(.95) translate(0%,-50%)',
-        });
+    $('.totes, .bottomTrigger').hover(function(){
+        $('.totes').addClass('breath');
+        // $('.main').css({
+        //     opacity: '.8',
+        //     '-webkit-transform': 'scale(.95) translate(0%,-50%)',
+        // });
     },function(){
-        $('.main').css({
-            opacity: '1',
-            '-webkit-transform': 'scale(1) translate(0%,-50%)',
-        });
+        $('.totes').removeClass('breath');
+        // $('.main').css({
+        //     opacity: '1',
+        //     '-webkit-transform': 'scale(1) translate(0%,-50%)',
+        // });
     });
 
+    function openTote(){
+        $('.hero').addClass('totes-active');
+        $('.hero').removeClass('totes-inactive');
+    };
     function closeTotes(){
         $('.hero').removeClass('totes-active');
         $('#totes').addClass('animating');
         var totes = $('#totes');
         totes.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
         function(e) {
-           totes.removeClass('animating');
+            totes.removeClass('animating');
+            $('.hero').addClass('totes-inactive');
         });
     }
 
